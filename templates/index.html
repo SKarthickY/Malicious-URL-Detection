@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <form id="url-form" method="POST" action="{{url_for('check_url')}}">
+        <label for="url-input">Enter URL:</label>
+        <input type="text" id="url-input" name="url" placeholder="Enter a url......" required>
+        <button type="button" id="clear-button" onclick="clearUrl()">Clear URL</button>
+        <button type="submit" id="check-button">Check URL</button>
+    </form>
+</div>
+
+<script>
+
+
+function clearUrl(){
+        document.getElementById('url-input').value='';
+    }
+
+    //ensure the DOM is fully loaded before attaching eventlisteners
+    document.addEventListener("DOMContentLoaded",function() {
+        document.getElementById("clear-button").addEventListener("click",clearUrl);
+    });
+
+
+</script>
+
+{% endblock %} 

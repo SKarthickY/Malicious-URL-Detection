@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container result-container">
+    <h2>Result for URL: {{url}}</h2>
+    <div class="result-status {{ status|lower }}">
+        <p>Status: {{status}}</p>
+    </div>
+</div>
+{% endblock %}
